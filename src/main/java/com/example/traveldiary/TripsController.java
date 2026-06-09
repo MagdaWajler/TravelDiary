@@ -226,7 +226,7 @@ public class TripsController {
                 if (trip.getNotes() != null && !trip.getNotes().isEmpty()) {
                     //czhyszczenie notatek, usuwanie enterow
                     String cleanNotes = formatBulletPoints(trip.getNotes());
-                    // NOWE: Zamiast ucinac tekst, zawijamy go co 60 znakow
+                    //zawijanie tesktu co 60 znakow
                     String wrappedNotes = wrapText(cleanNotes, 60);
                     details.append("Notes: ").append(wrappedNotes).append("\\n");
                 }
@@ -259,7 +259,6 @@ public class TripsController {
 
                 if (plan.getGoals() != null && !plan.getGoals().isEmpty()) {
                     String cleanGoals = formatBulletPoints(plan.getGoals());
-                    // NOWE: Zawijanie tekstu dla celow
                     String wrappedGoals = wrapText(cleanGoals, 60);
                     details.append("Goals: ").append(wrappedGoals).append("\\n");
                 }
