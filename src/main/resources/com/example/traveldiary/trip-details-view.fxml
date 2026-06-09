@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-background-color: #f4f4f9; -fx-padding: 25;" prefWidth="475" prefHeight="700"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.traveldiary.TripDetailsController">
+
+    <VBox spacing="5">
+        <Label fx:id="titleLabel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;-fx-font-family: 'Arial';"/>
+        <Label fx:id="locationLabel" style="-fx-font-size: 20px; -fx-text-fill: #258585; -fx-font-family: 'Times New Roman';"/>
+        <Label fx:id="dateLabel" style="-fx-font-size: 15px; -fx-text-fill: #0e0606; -fx-font-style: italic;-fx-font-family: 'Arial';"/>
+    </VBox>
+
+    <Separator style="-fx-opacity: 0.5;"/>
+
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label text="My Memories" style="-fx-font-weight: bold;-fx-font-size: 17px; -fx-text-fill: #34495e;-fx-font-family: 'Arial';"/>
+        <TextArea fx:id="notesArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: white;
+                         -fx-control-inner-background: white;
+                         -fx-background-radius: 10;
+                         -fx-border-radius: 10;
+                         -fx-border-color: #dcdde1;
+                         -fx-padding: 10;
+                         -fx-font-size: 16px;
+                         -fx-font-family: 'Times New Roman';
+                         -fx-focus-color: transparent;
+                         -fx-faint-focus-color: transparent;"/>
+    </VBox>
+
+    <VBox spacing="10">
+        <Label text="Photo Gallery" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+        <ScrollPane prefHeight="175" fitToHeight="true"
+                    style="-fx-background-color: transparent; -fx-background: transparent; -fx-border-color: transparent;">
+            <HBox fx:id="imageGallery" spacing="15" style="-fx-padding: 5 0 10 0;"/>
+        </ScrollPane>
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Delete Trip" onAction="#onDeleteClick" prefWidth="200"
+                style="-fx-background-color: #e74c3c;
+                   -fx-text-fill: white;
+                   -fx-font-size: 14px;
+                   -fx-font-weight: bold;
+                   -fx-background-radius: 25;
+                   -fx-cursor: hand;
+                   -fx-padding: 10 20;"/>
+        <Button text="Back to Grid" onAction="#onCloseClick" prefWidth="200"
+                style="-fx-background-color: #3498db;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 25;
+                       -fx-cursor: hand;
+                       -fx-padding: 10 20;"/>
+        <Button text="Edit Trip" onAction="#onEditClick" prefWidth="200"
+                style="-fx-background-color: #f39c12;
+                        -fx-text-fill: white;
+                        -fx-font-size: 14px;
+                        -fx-font-weight: bold;
+                        -fx-background-radius: 25;
+                        -fx-cursor: hand;
+                        -fx-padding: 10 20;"/>
+    </HBox>
+</VBox>

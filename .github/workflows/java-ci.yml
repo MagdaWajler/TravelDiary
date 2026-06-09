@@ -1,0 +1,29 @@
+name: Java CI with Maven
+
+#odpalenie za kazydm razem przy push i pull
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    #na darmowej maszynie wirtualnej z Linux Ubuntu od GitHuba
+    runs-on: ubuntu-latest
+
+    steps:
+      #pobierz kod z repo
+      - uses: actions/checkout@v3
+
+      #install Java 21
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      #zbuduj apke i odpal testy przy uzyciu Mavena
+      - name: Build and Test with Maven
+        run: mvn -B package --file pom.xml
